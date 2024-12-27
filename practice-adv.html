@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JEE Mains PYQs - Practice</title>
+    <link rel="stylesheet" href="practice-adv styles.css">
+    <script src="practice-adv js.js" defer></script>
+</head>
+<body background="Body-Background.jpg" style="background-repeat: repeat; background-size: cover; background-blend-mode: luminosity;">
+    <header>
+        <div class="header-left">
+            <h1>JEE Advanced PYQs</h1>
+        </div>
+        <div class="header-right">
+            <button class="back-btn" ><a href="practice-adv.html" style="text-decoration: none; color: white;">Home</a></button>
+        </div>
+    </header>
+    <!-- Main Body Section -->
+    <main>
+        <div class="practice-container">
+            <div class="body-header">
+                <h1 class="bodyh1">JEE Advanced PYQs</h1>
+                <p class="bodyp">Practice the best PYQs of ADV. Exam for last three years (2020-23)</p>
+            </div>
+            <div class="To-Do">
+                <h3 style="margin-bottom: 5px; margin-top: 15px;">WHAT TO DO?</h3>
+            <ul>
+                <li>
+                    You have to select subject first.
+                </li>
+                <li>
+                    There is 10 Sets of Question for each subject.
+                </li>
+                <li>
+                    Each sets contain 10 PYQs from JEE ADV.
+                </li>
+                <li>
+                    Each correct answer +4, wrong -1
+                </li>
+                <li>
+                    Hope it helps on your study <span>:)</span>
+                </li>
+            </ul>
+            </div>
+            <div class="buttons-div" style="width: 110%; display: flex; justify-content: space-between;">
+                <button class="menu"><a href="index.html" style="color: white; text-decoration: none;">Menu</a></button>
+                <button class="start-practice-btn" onclick="showSubjects()">Start Practice</button>
+            </div>
+        </div>
+
+        <!-- Subject Selection Section -->
+        <div id="subject-section" class="hidden">
+            <div style="display: flex; justify-content: space-around; align-items: center;">
+                <h2 style="text-align: center; margin-bottom: 20px;  background-color: white; padding: 10px 20px; border-radius: 10px; box-shadow: 0 4px 6px rgba(0, 0, 0, 0.303);">Select Subject</h2>
+            </div>
+            <div style="display: flex; justify-content: center; flex-direction: column;">
+                <button class="subject-btn" onclick="startPractice('physics')">Physics</button>
+                <button class="subject-btn" onclick="startPractice('chemistry')">Chemistry</button>
+                <button class="subject-btn" onclick="startPractice('math')">Math</button>
+            </div>
+        </div>
+
+        <!-- Practice Set Selection Section -->
+        <div id="practice-set-section" class="hidden">
+            <div style="display: flex; flex-direction: column; align-items: center; justify-content: space-between; margin-bottom: 30px;">
+                <h2 style="text-align: center; margin-bottom: 20px; margin-top: 30px; background-color: white; padding: 10px; border-radius: 10px; box-shadow: 0 4px 6px rgba(0, 0, 0, 0.303);">Select Practice Set</h2>
+                <button class="set-btn" onclick="startSet(1)">Practice Set No 1</button>
+                <button class="set-btn" onclick="startSet(2)">Practice Set No 2</button>
+                <button class="set-btn" onclick="startSet(3)">Practice Set No 3</button>
+                <button class="set-btn" onclick="startSet(4)">Practice Set No 4</button>
+                <button class="set-btn" onclick="startSet(5)">Practice Set No 5</button>
+                <button class="set-btn" onclick="startSet(6)">Practice Set No 6</button>
+                <button class="set-btn" onclick="startSet(7)">Practice Set No 7</button>
+                <button class="set-btn" onclick="startSet(8)">Practice Set No 8</button>
+                <button class="set-btn" onclick="startSet(9)">Practice Set No 9</button>
+                <button class="set-btn" onclick="startSet(10)">Practice Set No 10</button>
+            </div>
+        </div>
+
+        <!-- Question Section -->
+        <div id="question-section" class="hidden">
+            <!-- Current Practice Set Display -->
+            <div id="current-set-display" style="text-align: center; margin-bottom: 20px; padding: 10px; background-color: #f0f0f0; border-radius: 8px; box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);">
+                <h3 id="current-set-text"></h3>
+            </div>
+            <div id="question-container">
+                <p id="question-text"></p>
+                <button class="answer-btn" onclick="answerQuestion('A')">A. Option 1</button>
+                <button class="answer-btn" onclick="answerQuestion('B')">B. Option 2</button>
+                <button class="answer-btn" onclick="answerQuestion('C')">C. Option 3</button>
+                <button class="answer-btn" onclick="answerQuestion('D')">D. Option 4</button>
+            </div>
+            <div class="button-container">
+                <button id="previous-btn" class="prevoius-btn hidden" onclick="previousQuestion()">Previous</button>
+                <button id="next-btn" class="next-btn" onclick="nextQuestion()">Next</button> <!-- Next is always visible -->
+            </div>
+        </div>
+
+        <!-- Footer Section -->
+        
+    </main>
+<!-- Score Pop-Up -->
+<div id="score-popup" class="hidden popup-overlay">
+    <div class="popup-box">
+        <h1 id="score-h1">JEE Advanced PYQs</h1>
+        <h2 id="score-message"></h2>
+        <div class="popup-buttons">
+            <button id="home-btn">Home</button>
+            <button id="restart-btn">Practice Again</button>
+        </div>
+    </div>
+</div>
+
+<footer style="margin-top: 20px;">
+    <p>Copyright @2024; Developed by <span style="color: white; font-size: 15px;">Suman Bhattacharya</span></p>
+</footer>
+<div class="version" style="position: fixed; bottom: 5px; color: white; font-size: 10px; right: 8px; z-index: 1000;">V 2.0</div>
+</body>
+</html>

@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JEE Mains & Adv PYQs</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- Loading Screen -->
+    <div id="loading-screen">
+        <div class="loading-content">
+            <h1 class="fade-heading">JEE MAIN & ADV PYQs</h1>
+            <p class="fade-text">Developed by <span class="name"> Suman Bhattacharya</span></p>
+        </div>
+        <div class="loading-indicator">
+          <span class="loading-text">Loading...</span>
+          <div class="spinner-div">
+            <div class="spinner"></div>
+          </div>
+      </div>
+    </div>
+
+    <!-- Header Section -->
+    <header class="hidden">
+        <div class="header-left">
+            <img src="LOGO png.png" class="logo">
+            <h1>JEE Mains & Adv PYQs</h1>
+        </div>
+        <div class="navbar">
+            <button class="sign-in-button" id="signInButton" style="z-index: 1">Sign In</button>
+        </div>
+    </header>
+
+    <!-- Main Body Section -->
+    <main class="hidden">
+        <div class="container">
+            <!-- JEE Mains Section -->
+            <div class="section">
+                <h2>JEE Mains PYQs</h2>
+                <p style="text-align: justify;">Let's practice the best recent year Questions of JEE MAINS (2020-23) selected by our experts.</p>
+                <a href="practice-mains.html" class="start-btn" id="start-mains">Start Practice</a>
+            </div>
+            
+            <!-- JEE Advanced Section -->
+            <div class="section">
+                <h2>JEE Advanced PYQs</h2>
+                <p style="text-align: justify;">Let's practice best recent year Questions of JEE Advanced (2013-23) selected by our experts.</p>
+                <a href="practice-adv.html" class="start-btn" id="start-adv">Start Practice</a>
+            </div>
+        </div>
+
+        <!-- Sign-in Pop-up -->
+        <div class="popup-overlay" id="popup">
+            <div class="popup-container">
+                <h3 style="text-align: justify;">Fill up the following details</h3>
+                <form id="signInForm">
+                    <input type="text" id="username" placeholder="Enter your username">
+                    <input type="email" id="email" placeholder="Enter your email">
+                    <div class="password-container">
+                        <input type="password" id="password" placeholder="Password">
+                    </div>
+                    <div class="submit-div">
+                      <button type="submit" class="enter-button">Enter</button>
+                      <button id="homeButtonEnter" onclick="goHome()">Cancel</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+
+        <!-- Pop-up for Alert Messages -->
+        <div class="alert-popup" id="alertPopup">
+            <div class="alert-content">
+                <p id="alertMessage"></p>
+            </div>
+        </div>
+
+        <!-- User Details Pop-up -->
+        <div class="popup-overlay" id="userPopup">
+            <div class="popup-container">
+                <div class="h-with-setting">
+                    <h3>JEE MAINS & ADV PYQs</h3>
+                    <img src="settings.png" id="settingsIcon" style="cursor: pointer;">
+                </div>
+                <div class="user-details">
+                    <p><strong>Username:</strong> <span id="displayUsername"></span></p>
+                    <p><strong>Email:</strong> <span id="displayEmail"></span></p>
+                    <p><strong>Password:</strong> <span id="displayPassword"></span></p>
+                    <p><strong>Signed In since:</strong> <span id="displayDate"></span></p>
+                </div>
+
+                <!-- Buttons Container -->
+                <div class="button-container">
+                    
+                </div>
+            </div>
+        </div>
+        
+        <!-- Settings Pop-up -->
+        
+        <div id="settingsPopup" class="popup-overlay">
+            <div class="popup-container">
+                <h1 style="margin-bottom: 20px;">Settings</h1>
+                <div class="settings-option">
+                    <label for="soundToggle">Enable Sound</label>
+                    <input type="checkbox" class="checkbox" id="soundToggle" checked>
+                </div>
+                <div class="settings-option">
+                    <label for="darkModeToggle">Enable Dark Mode</label>
+                    <input type="checkbox" class="checkbox" id="darkModeToggle">
+                </div>
+                <div class="settings-option">
+                    <label for="notificationsToggle">Enable Notifications</label>
+                    <input type="checkbox" class="checkbox" id="notificationsToggle" checked>
+                </div>
+                <div class="submit-div">
+                    <button id="saveSettingsButton" class="save-changes">Save</button>
+                    <button id="closeSettingsButton" class="Cancel">Close</button>
+                </div>
+            </div>
+        </div>
+
+
+        <!-- Edit Details Pop-up -->
+        <div id="editPopup" class="popup-overlay">
+            <div class="popup-container">
+                <h3>Edit Details</h3>
+                <form id="editForm">
+                  <input type="text" id="newUsername" placeholder="Enter New User name" required>
+                  <input type="email" id="newEmail" placeholder="Enter New Email" required>
+                  <input type="password" id="previousPassword" placeholder="Enter Previous Password" required>
+                  <input type="password" id="newPassword" placeholder="Enter New Password" required>
+                  <div class="submit-div">
+                    <button type="submit" class="save-changes" onclick="goHome()">Save Changes</button>
+                    <button type="button" class="Cancel" onclick="editPopup.style.display = 'none'">Cancel</button>
+                  </div>
+                </form>
+            </div>
+        </div>
+    </main>
+
+    <!-- Footer Section -->
+    <footer>
+        <p class="copyright">Copyright @2024; Developed by <span class="copy-name">Suman Bhattacharya</span></p>
+    </footer>
+    <div class="version" style="position: fixed; bottom: 5px; color: white; font-size: 10px; right: 8px; z-index: 1000;">V 2.0</div>
+    <!-- Grey Overlay -->
+    <div id="overlay"></div>
+
+    <script src="script.js"></script>
+</body>
+</html>

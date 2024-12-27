@@ -1,0 +1,693 @@
+/* Reset some default styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI';
+}
+@font-face{
+    font-family: 'Segoe UI';
+    src: url(Segoe\ UI.woff);
+}
+/* Body and basic styling */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #dddddde3;
+    height: 100vh; /* Full height of the viewport */
+    display: flex;
+    flex-direction: column;
+}
+
+/* Loading Screen Styles */
+#loading-screen {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: black;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+    overflow: hidden;
+    transition: ease-out;
+}
+
+.loading-content {
+    text-align: center;
+    color: white;
+}
+
+.fade-heading {
+    font-size: 26px;
+    margin: 20px;
+    font-weight: bold;
+    opacity: 0;
+    animation: fade-in-out 7s ease-in-out;
+}
+
+.fade-text {
+    font-size: 16px;
+    opacity: 0;
+    animation: fade-in-out 5s ease-in-out;
+    animation-delay: 2s; /* Delays the fade for the secondary text */
+}
+
+.name {
+    color: #bdd4ea;
+    opacity: 0;
+    font-size: 18px;
+    animation: name 5s ease-in-out;
+    animation-delay: 2s;
+}
+
+/* Fade-in-out animation */
+@keyframes fade-in-out {
+    0% {
+        opacity: 0;
+    }
+    20% {
+        opacity: 1;
+        scale: 1.1;
+    }
+    80% {
+        opacity: 1;
+        scale: 1.1;
+    }
+    100% {
+        opacity: 0;
+    }
+}
+
+@keyframes name {
+    0% {
+        opacity: 0;
+    }
+    20% {
+        opacity: 1;
+        scale: 1.2;
+    }
+    45% {
+        opacity: 1;
+        scale: 1.2;
+        font-size: 18px;
+        color: #bdd4ea;
+    }
+    50% {
+        opacity: 1;
+        scale: 1.2;
+        font-size: 20px;
+        color: rgb(130, 208, 224);
+    }
+    55% {
+        opacity: 1;
+        scale: 1.2;
+        font-size: 18px;
+        color: #bdd4ea;
+    }
+    80% {
+        opacity: 1;
+        scale: 1.2;
+    }
+    100% {
+        opacity: 0;
+    }
+}
+.loading-indicator {
+    position: absolute;
+    bottom: 50px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.loading-text {
+    font-size: 1.5rem;
+    color: white;
+    animation: fade-in-out 7s ease-in-out;
+}
+
+.spinner-div {
+    animation: fade-in-out 7s ease-in-out;
+}
+.spinner {
+    width: 20px;
+    height: 20px;
+    border: 3px solid white;
+    border-top: 3px solid transparent;
+    border-radius: 50%;
+    animation: spin-stop 3s linear infinite;
+}
+
+/* Spinner Animation with Stopping Effect */
+@keyframes spin-stop {
+    0% {
+        transform: rotate(0deg);
+    }
+    90.47% {
+        transform: rotate(720deg); /* Two full spins */
+    }
+    95% {
+        transform: rotate(720deg); /* Hold position */
+    }
+    100% {
+        transform: rotate(720deg); /* Complete cycle */
+    }
+}
+/* Hidden Class */
+.hidden {
+    display: none;
+}
+
+/* Header styles */
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    padding: 20px 10px 20px 20px;
+    background-image: linear-gradient(to right, rgb(13, 0, 153), rgb(0, 55, 194), rgb(18, 148, 255));
+    color: white;
+    border-bottom: 0.5px solid white;
+}
+
+/* header left */
+
+.header-left{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+}
+
+.header-left img {
+    height: 30px;
+    width: auto;
+    
+}
+
+.header-left h1 {
+    font-size: 24px;
+}
+
+/* header right */
+
+.header-right {
+    display: flex;
+    align-items: center;
+}
+
+/* Customization of SIGN IN BUTTON */
+
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+  }
+
+  /* Sign-In Button */
+  .sign-in-button {
+    padding: 12px 20px;
+    background-image: linear-gradient(135deg, #0059ff, #0047cc , #0104ad);
+    border: none;
+    color: white;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.474);
+  }
+  .sign-in-button:hover {
+    background-color: #0056b3;
+  }
+
+  /* Pop-up Overlay */
+  .popup-overlay {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+  }
+
+  /* Pop-up Container */
+  .popup-container {
+    background-color: white;
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    width: 400px;
+    max-width: 100%;
+    font-size: 14px;
+    text-align: left;
+    animation: fade 0.3s ease-in-out;
+    position: relative;
+  }
+
+  @keyframes fade {
+    0%{
+        opacity: 0;
+    }
+    100%{
+        opacity: 1;
+    }
+  }
+  /* Input Fields */
+  input[type="text"],
+  input[type="email"],
+  input[type="password"] {
+    width: 100%;
+    padding: 12px;
+    margin: 8px 0;
+    border: 1px solid #adadad;
+    border-radius: 5px;
+    font-size: 16px;
+    box-sizing: border-box;
+  }
+
+  input[type="text"]:focus,
+  input[type="email"]:focus,
+  input[type="password"]:focus {
+    border-color: #007bff;
+    outline: none;
+  }
+  /* Styling the password container */
+  .password-container {
+position: relative;
+display: flex;
+align-items: center;
+}
+.submit-div{
+    display: flex;
+    gap: 10px;
+}
+#homeButtonEnter,
+.Cancel {
+    padding: 12px 20px;
+    background-color: #eb1e03;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    font-size: 18px;
+    width: fit-content;
+    cursor: pointer;
+    margin-top: 10px;
+}
+  /* Submit Button */
+  .enter-button,
+  .save-changes {
+    padding: 12px 20px;
+    background-color: #029d17;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    font-size: 18px;
+    width: 100%;
+    cursor: pointer;
+    margin-top: 10px;
+  }
+
+  .enter-button:hover {
+    background-color: #0056b3;
+  }
+
+  /* Rules */
+  /* Alert pop-up styling */
+.alert-popup {
+  display: none;
+  position: fixed;
+  top: 18%;
+  left: 50%;
+  transform: translateX(-50%) translateY(-50%);
+  background-color: #f44336; /* Red background for error */
+  color: white;
+  border-radius: 8px;
+  z-index: 9999;
+  width: 80%;
+  max-width: 400px;
+  text-align: center;
+  animation: rules 5s;
+  }
+  .alert-content {
+    padding: 10px;
+    width: 100%;
+    height: 100%;
+  }
+  #alertMessage{
+    font-size: 18px;
+    font-family: 'Segoe UI';
+    margin: 0px;
+    padding: 10px;
+  }
+  @keyframes rules {
+    0% { opacity: 1; scale: 0.2; }
+    5% { opacity: 1; scale: 1;}
+    90% { opacity: 1; scale: 1;}
+    100% { opacity: 0; scale: 0.2;}
+  }
+
+  .h-with-setting{
+    display: flex;
+    height: auto;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  .h-with-setting h3{
+    text-align: center;
+  }
+  .h-with-setting img{
+    height: 30px;
+  }
+
+
+  /* Navbar Placeholder */
+  .navbar {
+    display: flex;
+    justify-content: flex-end;
+  }
+  #userLink {
+    padding: 10px 20px;
+    font-size: 16px;
+    background-color: rgb(0, 50, 149);
+    border-radius: 10px;
+    border: none;
+    text-decoration: none;
+  }
+  #userLink:hover{
+    text-decoration: none;
+  }
+  /* Pop-up Overlay */
+  .popup-overlay {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    justify-content: center;
+    align-items: center;
+  }
+
+  /* Pop-up Container */
+  .popup-container {
+    background-color: white;
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    width: 400px;
+    max-width: 90%;
+    font-size: 14px;
+    text-align: left;
+  }
+
+  .popup-container h3 {
+    margin: 0;
+    padding: 0;
+    font-size: 22px;
+    font-weight: bold;
+    margin-bottom: 0px;
+  }
+
+  /* User Details */
+  .user-details {
+    margin-top: 20px;
+  }
+
+  .user-details p {
+    margin: 10px 0;
+  }
+
+  .user-details strong {
+    font-weight: bold;
+  }
+
+  /* Button Container */
+  .button-container {
+    display: flex;
+    justify-content: space-between;
+    gap: 5px;
+    margin-top: 20px;
+  }
+  /* Home and Sign Out Buttons */
+  .home-button,
+  .sign-out-button,
+  .edit-button {
+    padding: 12px 7%;
+    background-image: linear-gradient(135deg, #00aeff, #0055af);
+    border-top: 1px solid #0099ff;
+    border-right: 1px solid #004fa4;
+    border-bottom: 1px solid #004fa4;
+    border-left: 1px solid #0099ff;
+    color: white;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 13px;
+    width: fit-content;
+  }
+  .home-button:hover,
+  .sign-out-button:hover,
+  .edit-button:hover {
+    background-image: linear-gradient(135deg, rgb(0, 160, 255), rgb(0, 86, 207));
+  }
+
+  /* User button */
+  .userbutton-container{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 6px;
+  }
+  .usericon{
+    position: relative;
+    top: 1px;
+    width: 17px;
+    height: 17px;
+  }
+  /* User Link */
+  .user-link {
+    color: white;
+    text-decoration: none;
+    font-size: 16px;
+    cursor: pointer;
+  }
+  .user-link:hover {
+    text-decoration: none;
+  }
+
+/* END OF SIGN IN BUTTON CSS */
+
+/* Main body section */
+main {
+    flex: 1; /* Takes up the remaining space */
+    padding: 40px 20%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: url(index\ bg.jpg);
+    background-size: cover;
+}
+
+.container {
+    display: flex;
+    justify-content: space-around;
+    gap: 50px;
+}
+
+.section {
+    background-color: white;
+    padding: 15px;
+    border-radius: 8px;
+    box-shadow: 1px 3px 4px rgba(0, 0, 0, 0.208);
+    width: 55%;
+    border: 1px solid rgba(0, 0, 0, 0.1);
+}
+
+h2 {
+    font-size: 22px;
+    margin-bottom: 10px;
+}
+
+p {
+    font-size: 15px;
+    margin-bottom: 20px;
+}
+
+.start-btn {
+    display: inline-block;
+    padding: 10px 20px;
+    background-image: linear-gradient(to bottom, #003ec4, #0039b5, #003ec4);
+    color: white;
+    text-decoration: none;
+    border-radius: 4px;
+    text-align: center;
+    font-size: 16px;
+    box-shadow: 1px 2px 4px rgba(0, 0, 0, 0.37);
+}
+
+.start-btn:hover {
+    background-color: #0066cc;
+}
+
+.start-btn:active {
+    background-color: #0056b3;
+}
+
+/* Grey overlay that covers the screen */
+#overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5); /* Semi-transparent grey */
+    display: none; /* Initially hidden */
+    z-index: 9999; /* Make sure it's on top of all content */
+}
+/* Footer styles */
+footer {
+    background-color: rgb(88, 88, 88);
+    color: rgb(228, 228, 228);
+    padding: 20px 0;
+    text-align: center;
+    font-size: 12px;
+    margin: 0;
+}
+
+.copyright {
+    margin: 0;
+    color: #c9c9c9f5;
+    font-size: 14px;
+}
+
+.copy-name {
+    color: rgb(255, 255, 255);
+    font-size: 15px;
+    font-family: Arial, Helvetica, sans-serif;
+    animation: copy-name-animation;
+    animation-duration: 2s;
+    animation-iteration-count: infinite;
+}
+
+@keyframes copy-name-animation {
+    0% {
+        opacity: 1;
+    }
+    25% {
+        color: #c9c9c9f5;
+    }
+    50% {
+        color: white;
+    }
+    75% {
+        color: #c9c9c9f5;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+.version {
+    position: fixed;
+    bottom: 5px;
+    color: white;
+    font-size: 10px;
+    right: 8px;
+    z-index: 1000;
+}
+/* Sign-in pop-up styles (full-screen background) */
+.popup {
+    display: none;  /* Hidden by default */
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.6); /* Semi-transparent background */
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+}
+
+/* Pop-up content styles (the content inside the pop-up box) */
+.popup-content {
+    background-color: white;
+    padding: 30px;
+    text-align: center;
+    border-radius: 10px;
+    max-width: 350px;
+    margin: 0 auto;
+    opacity: 0;  /* Initially hidden */
+    transform: scale(0.2);  /* Initially smaller scale */
+    transition: opacity 0.5s ease-in-out, transform 0.5s ease-in-out;  /* Smooth fade-in and scale transition */
+}
+
+/* Pop-up content shown (fade-in and scale-up) */
+.popup-content.show {
+    opacity: 1;
+    transform: scale(1);  /* Normal scale */
+}
+
+/* Pop-up heading and button styling */
+.popup h2 {
+    margin: 0 0 20px 0;
+}
+
+.popup button {
+    padding: 10px 20px;
+    background-color: #0056b3;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+.popup button:hover {
+    background-color: #0066cc;
+}
+
+
+/* Responsive design */
+@media screen and (max-width: 768px) {
+    .container {
+        flex-direction: column;
+        gap: 20px;
+    }
+
+    .header-right button {
+        font-size: 14px;
+    }
+
+    .section {
+        width: 100%;
+    }
+}
+@media screen and (max-width: 450px) {
+    main{
+        padding: 40px 8%;
+    }
+    .header-left h1{
+        font-size: 20px;
+    }
+}
+
+.settings-option {
+    margin-bottom: 15px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.checkbox :checked{
+    background-color: green;
+    color: white;
+}
+.checkbox{
+    color: black;
+}

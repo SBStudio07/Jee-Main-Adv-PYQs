@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Button Click Sound</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      padding: 20px;
+    }
+
+    button {
+      padding: 10px 20px;
+      font-size: 16px;
+      cursor: pointer;
+      background-color: #007BFF;
+      color: white;
+      border: none;
+      border-radius: 5px;
+      transition: background-color 0.3s;
+    }
+
+    button:hover {
+      background-color: #0056b3;
+    }
+
+    .toggle-container {
+      margin-top: 20px;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .toggle-container input {
+      transform: scale(1.5);
+    }
+  </style>
+</head>
+<body>
+  <button id="clickButton">Click Me</button>
+
+  <div class="toggle-container">
+    <input type="checkbox" id="soundToggle" checked>
+    <label for="soundToggle">Enable Click Sound</label>
+  </div>
+
+  <script>
+    // Create an audio object
+    const clickSound = new Audio('click-sound.mp3');
+
+    // Get references to the button and toggle checkbox
+    const button = document.getElementById('clickButton');
+    const soundToggle = document.getElementById('soundToggle');
+
+    // Add event listener to the button
+    button.addEventListener('click', () => {
+      if (soundToggle.checked) { // Play sound only if enabled
+        clickSound.currentTime = 0; // Reset the audio to start from the beginning
+        clickSound.play();
+      }
+    });
+  </script>
+</body>
+</html>

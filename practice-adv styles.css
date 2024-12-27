@@ -1,0 +1,410 @@
+/* Reset some default styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI';
+}
+@font-face{
+    font-family: 'Segoe UI';
+    src: url(Segoe\ UI.woff);
+}
+/* Header styles */
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    padding: 0px 0px 0px 30px;
+    background-image: linear-gradient(to right, rgb(6, 50, 171),rgb(16, 63, 215), #0056b3);
+    color: white;
+    position: sticky; top: 0;
+}
+
+.header-left h1 {
+    font-size: 24px;
+}
+
+.header-right {
+    display: flex;
+    align-items: center;
+}
+
+.back-btn {
+    background-color: rgb(5, 8, 194);
+    border: none;
+    box-shadow: 0 2px 2px rgba(0, 0, 0, 0.341);
+}
+/* Body and basic styling */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+    display: flex;
+    flex-direction: column;
+    height: 100vh; /* Full height of the viewport */
+}
+
+/* Main container - takes the available space in between header and footer */
+main {
+    flex: 1; /* Takes the remaining space between the header and footer */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Practice container centered horizontally and vertically */
+.practice-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+}
+
+.body-header{
+    width: 110%;
+    height: 125px;
+    margin-bottom: 10px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+    background-color: white;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.39);
+    border-radius: 8px;
+}
+.bodyh1{
+    margin-bottom: 5px;
+    margin-top: 20px;
+    font-family: 'Segoe UI';
+}
+.bodyp{
+    width: 266.75px;
+    margin-bottom: 20px;
+}
+.To-Do{
+    width: 110%;
+    height: 180px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    background-color: white;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.39);
+    border-radius: 8px;
+}
+ul{
+    text-align: justify;
+    margin-left: 25px;
+    margin-bottom: 20px;
+}
+.start-practice-btn {
+    padding: 15px 30px;
+    font-size: 18px;
+    width: 70%;
+    margin: 10px 0px;
+    background-color: #0059b8;
+    color: white;
+    border: none;
+    border-radius: 5px;
+}
+.start-practice-btn:hover{
+    background-color: rgb(16, 50, 199);
+}
+.menu{
+    background-color: #0059b8;
+    border: none;
+    padding: 10px 25px;
+    margin: 10px 0px;
+    font-size: 18px;
+    box-shadow: 0 2px 2px rgba(0, 0, 0, 0.218);
+}
+.menu:hover{
+    background-color: rgb(16, 50, 199);
+}
+button {
+    padding: 10px 20px;
+    margin: 10px;
+    background-color: #0056b3;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 18px;
+    transition-duration: 0.3s;
+}
+
+button:hover {
+    background-color: rgb(16, 50, 199);
+}
+
+.hidden {
+    display: none;
+}
+
+/* Subject and Set Buttons */
+
+.subject-btn, .set-btn {
+    background-color: #005ec2;
+    color: white;
+    border: none;
+    cursor: pointer;
+    transition-duration: 0.3s;
+}
+
+.subject-btn:hover, .set-btn:hover {
+    background-color: #0546a0;
+}
+/* practice sets */
+.set-btn{
+    text-align: center;
+}
+/* Style for the current set display box to match question container */
+#current-set-display {
+    background-color: white; /* Match the question container background */
+    border: 2px solid #ddd; /* Border to match the container */
+    border-radius: 8px; /* Rounded corners */
+    padding: 0px; /* Spacing inside the box */
+    margin-bottom: 10px; /* Spacing above and below */
+    width: 380px; /* Same width as the question container */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Subtle shadow effect */
+    text-align: center; /* Center-align text */
+}
+
+/* Text style inside the current set display */
+#current-set-text {
+    font-size: 18px; /* Adjusted font size */
+    font-weight: bold; /* Bold text for prominence */
+    color: #333; /* Neutral text color */
+}
+
+/* Question Section */
+#question-container {
+    height: auto;
+    width: 380px;
+    border-radius: 10px;
+    background-color: #ecececc2;
+    box-shadow: 0 4px 6px hsla(0, 0%, 0%, 0.26);
+    animation: fade 0.2s ease-in;
+}
+@keyframes fade {
+    0%{
+        opacity: 0;
+    }
+    100%{
+        opacity: 1;
+    }
+  }
+#question-text{
+    font-size: 20px;
+    font-family: Arial, Helvetica, sans-serif;
+    text-align: justify;
+    color: black;
+    padding-top: 20px;
+    margin: 0px 20px 30px 20px;
+}
+.answer-btn {
+    background-color: #ffffff;
+    border: 1px solid #dbdbdb;
+    box-shadow: 0 1px 1px rgba(0, 0, 0, 0.218);
+    padding: 12px;
+    margin: 10px;
+    width: 95%;
+    font-size: 16px;
+    font-family: sans-serif;
+    cursor: pointer;
+    transition-duration: 0.3s;
+}
+
+.answer-btn::after {
+    background-color: #474747;
+}
+
+/* Container for both Previous and Next buttons */
+.button-container {
+    display: flex;
+    justify-content: space-between; /* Aligns buttons to left and right */
+    width: 100%; /* Full width of the container */
+    margin-top: 10px; /* Space above the buttons */
+}
+
+/* Style for the Previous Button */
+#previous-btn {
+    padding: 10px 40px;
+    font-size: 16px;
+    background-color: #0369d6; /* Light grey background */
+    color: #ffffff; /* Dark text color */
+    border: none; /* Border color */
+    border-radius: 5px; /* Rounded corners */
+    cursor: pointer;
+    transition: background-color 0.3s ease, color 0.3s ease; /* Smooth transition effect */
+    margin-left: 0px; /* Space from the left edge */
+}
+
+/* Hover effect for Previous Button */
+#previous-btn:hover {
+    background-color: #ff5e5e; /* Darker grey background on hover */
+    color: #000; /* Change text color to black on hover */
+}
+
+/* Active state for Previous Button */
+#previous-btn:active {
+    background-color: #ccc; /* Dark grey background when button is clicked */
+}
+
+/* Style for the Next Button */
+#next-btn {
+    padding: 10px 40px;
+    font-size: 16px;
+    background-color: #0369d6; /* Green background */
+    color: white; /* White text */
+    border: none; /* Border color */
+    border-radius: 5px; /* Rounded corners */
+    cursor: pointer;
+    transition: background-color 0.3s ease, color 0.3s ease; /* Smooth transition effect */
+    margin: 10px 0px; /* Space from the right edge */
+}
+
+/* Hover effect for Next Button */
+#next-btn:hover {
+    background-color: #45a049; /* Darker green on hover */
+}
+
+/* Active state for Next Button */
+#next-btn:active {
+    background-color: #388e3c; /* Dark green when button is clicked */
+}
+
+/* Hidden state (when button is not visible) */
+.hidden {
+    display: none !important;
+}
+
+/* Pop-Up Overlay */
+.popup-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.8);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 9999;
+}
+
+/* Pop-Up Box */
+.popup-box {
+    width: 80%;
+    background: white;
+    padding: 20px;
+    border-radius: 8px;
+    text-align: center;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+    animation: fade 0.2s ease-in-out;
+}
+.popup-box h1{
+    margin-bottom: 30px;
+}
+.popup-box h2 {
+    margin-bottom: 15px;
+    font-size: 24px;
+    color: #333;
+}
+
+.popup-box button {
+    background: #007bff;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+.popup-box button:hover {
+    background: #0056b3;
+}
+
+/* Hidden Class */
+.hidden {
+    display: none;
+}
+.popup-buttons {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    margin-top: 20px;
+}
+
+.popup-buttons button {
+    background: #007bff;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: 0.3s ease;
+}
+
+.popup-buttons button:hover {
+    background: #0056b3;
+}
+
+/* Footer styles */
+footer {
+    background-color: rgb(42, 42, 42);
+    color: rgb(184, 184, 184);
+    padding: 15px 0;
+    text-align: center;
+    font-size: 14px;
+    margin: 0;
+}
+.copyright{
+    margin: 0;
+    color: white;
+}
+
+/* Responsive design */
+@media screen and (max-width: 768px) {
+    .container {
+        flex-direction: column;
+        gap: 20px;
+    }
+
+    .header-right button {
+        font-size: 14px;
+    }
+
+    .section {
+        width: 100%;
+    }
+
+}
+@media screen and (max-width: 450px) {
+    .body-header{
+        scale: 0.95;
+    }
+    .To-Do{
+        scale: 0.95;
+    }
+    .buttons-div{
+        scale: 0.95;
+    }
+    .button-container{
+        scale: 0.95;
+    }
+    #question-container{
+        scale: 0.95;
+    }
+    #current-set-display{
+        scale: 0.95;
+    }
+}
+@media screen and (max-width: 410px) {
+    .popup-box{
+        scale: 0.85;
+        padding: 15px;
+    }
+}
