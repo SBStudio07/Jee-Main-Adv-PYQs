@@ -4,6 +4,10 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>JEE Mains & Adv PYQs</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link href="/your-path-to-uicons/css/uicons-rounded-regular.css" rel="stylesheet">
+    <link href="/your-path-to-uicons/css/uicons-rounded-bold.css" rel="stylesheet">
+    <link href="/your-path-to-uicons/css/uicons-rounded-solid.css" rel="stylesheet">
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
@@ -11,7 +15,7 @@
     <div id="loading-screen">
         <div class="loading-content">
             <h1 class="fade-heading">JEE MAIN & ADV PYQs</h1>
-            <p class="fade-text">Developed by <span class="name"> Suman Bhattacharya</span></p>
+            <p class="fade-text">Developed by <span class="name"> SB Studio</span></p>
         </div>
         <div class="loading-indicator">
           <span class="loading-text">Loading...</span>
@@ -48,6 +52,14 @@
                 <p style="text-align: justify;">Let's practice best recent year Questions of JEE Advanced (2013-23) selected by our experts.</p>
                 <a href="practice-adv.html" class="start-btn" id="start-adv">Start Practice</a>
             </div>
+        </div>
+        <div class="about-developer">
+            <a class="dev-about-opener" id="devAboutOpener">
+                <div class="icon">
+                    <img src="Dev-icon.png" alt="">
+                </div>
+                <span id="about-devspan">About Developer</span>
+            </a>
         </div>
 
         <!-- Sign-in Pop-up -->
@@ -137,16 +149,58 @@
                 </form>
             </div>
         </div>
+
+        <!-- About Dev Popup -->
+
+        <div id="about-dev">
+            <div class="about-dev-top">
+                <h1>Everything About Developer</h1>
+                <button id="closeBtn" class="closeBtn" onclick="closeAboutDevPopup()">
+                    <i class="fa-solid fa-xmark"></i>
+                </button>
+            </div>
+            <div class="content-about">
+                <div class="about-dev-content">
+                    <h1>Hi, my name is:<br><span id="element">Suman Bhattacharya</span></h1>
+                    <li>Profession: <span class="about-span">Jn. Web Developer</span></li>
+                    <li>Age: <span class="about-span">16+</span></li>
+                    <li>Experience: <span class="about-span">3 Months+</span></li>
+                    <li>Graduated: <span class="about-span">Not Yet.</span></li>
+                    <h2>Contact Me On:</h2>
+                    <div class="a">
+                        <a><i class="fa-solid fa-envelope"></i></a>
+                        <p>sumanbhattacharya0007@gmail.com</p>
+                    </div>
+                    <div class="a" >
+                        <a href="https://youtube.com/@sbstudioyt?si=w3ntcAuw7RFm_jrW" target="_blank"><i class="fa-brands fa-youtube" style="color: #f50000;"></i></a>
+                        <p>SB Studio</p>
+                    </div>
+                    <div class="a" >
+                        <a href="https://github.com/SBStudio07" target="_blank"><i class="fa-brands fa-github" style="color: #181818;"></i></a>
+                        <p>SBStudio07</p>
+                    </div>
+                    <div class="a" >
+                        <a target="_blank"><i class="fa-solid fa-globe"></i></a>
+                        <p>Devfolio</p>
+                    </div>
+                </div>
+                <img class="dev-img" src="https://static.vecteezy.com/system/resources/previews/017/551/586/original/programmer-man-stylized-young-developer-person-working-on-computer-isolated-flat-cartoon-character-illustration-vector.jpg">
+                <img src="html.png" alt="" class="html">
+                <img src="css.png" alt="" class="css">
+                <img src="js.png" alt="" class="js">
+            </div>
+        </div>
     </main>
 
     <!-- Footer Section -->
     <footer>
-        <p class="copyright">Copyright @2024; Developed by <span class="copy-name">Suman Bhattacharya</span></p>
+        <p class="copyright">Copyright @2024; Developed by <span class="copy-name">SB Studio</span></p>
     </footer>
     <div class="version" style="position: fixed; bottom: 5px; color: white; font-size: 10px; right: 8px; z-index: 1000;">V 2.0</div>
     <!-- Grey Overlay -->
     <div id="overlay"></div>
 
+    <script src="https://unpkg.com/typed.js@2.1.0/dist/typed.umd.js"></script>
     <script src="script.js"></script>
 </body>
 </html>

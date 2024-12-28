@@ -273,3 +273,18 @@ document.addEventListener('DOMContentLoaded', () => {
   applySettings();
 });
 
+const openDevAbout = document.getElementById('devAboutOpener');
+const devAboutPopup = document.getElementById('about-dev');
+const closeDevAbout = document.getElementById('closeBtn');
+
+openDevAbout.addEventListener('click', () => {
+  openDevAbout.classList.add('active');
+  devAboutPopup.style.display = 'flex';
+  document.getElementById('overlay').style.display = 'flex';
+});
+
+closeDevAbout.addEventListener('click', () => {
+  openDevAbout.classList.remove('active');
+  devAboutPopup.style.display = 'none';
+  document.getElementById('overlay').style.display = 'none';
+});
